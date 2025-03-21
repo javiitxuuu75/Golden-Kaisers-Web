@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partidos - Golden Kaisers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo Golden Kaisers" class="escudo">
+        </div>
+        <h1>Golden Kaisers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="plantilla.html">Plantilla</a></li>
+                <li><a href="clasificacion.html">Clasificación</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Selector de temporada -->
+        <section>
+            <h2>Selecciona la temporada:</h2>
+            <select id="temporada-select" onchange="mostrarPartidos()">
+                <option value="--">--</option>
+                <option value="clausura">Clausura 2B 24-25</option>
+                <option value="apertura">Apertura 2B 24-25</option>
+            </select>
+        </section>
+
+        <!-- Cuadro informativo si no se ha seleccionado temporada -->
+        <section id="informativo" class="informativo">
+            <div class="informativo-contenido">
+                <p><strong>¡Selecciona una temporada para ver los partidos más recientes!</strong></p>
+                <p>Los partidos se mostrarán a medida que elijas una temporada. ¡No te pierdas ninguno!</p>
+            </div>
+        </section>
+
+        <!-- Contenedor de partidos por temporada -->
+        <section id="partidos-container" class="partidos-container">
+            <!-- Partidos de la temporada Clausura 2B 24-25 -->
+            <div id="clausura" class="temporada" style="display:none;">
+                <div class="partidos-container">
+                    <!-- Partido 1 Clausura -->
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 3" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="escudo mambo.png" alt="Escudo equipo 4" class="escudo-partido">
+                                <p class="nombre-equipo">Mambo FC</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>4-0</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">15/03/2025</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 1" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="ESCUDO TOLKOMUSH.jpg" alt="Escudo equipo 2" class="escudo-partido">
+                                <p class="nombre-equipo">Tolkomush F.C</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>3 - 0</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">09/03/2025</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <!-- Partido 2 Clausura -->
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO RESVOLUTION.jpg" alt="Escudo equipo 3" class="escudo-partido">
+                                <p class="nombre-equipo">Redvolution</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 4" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>1 - 2</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">22/02/2025</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+                    <!-- Continúa con los demás partidos de la temporada Clausura -->
+                     
+                </div>
+                <button id="loadMoreClausura">Cargar más partidos</button>
+
+            </div>
+
+            <!-- Partidos de la temporada Apertura 2B 24-25 -->
+            <div id="apertura" class="temporada" style="display:none;">
+                <div class="partidos-container">
+                    <!-- Partido 1 Apertura -->
+                    
+                    <!-- Continúa con los demás partidos de la temporada Apertura -->
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="amaetilico.jpeg" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Amaetilico</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>3 - 2</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">02/02/2025</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="escudo mambo.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Mambo FC</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>2 - 1</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">25/01/2025</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="eternosrepelega.jpeg" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Eternos Repelega 94</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>1 - 2</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">11/01/2025</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="procrastinadores.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Los Procrastinadores</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>1 - 2</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">15/12/2024</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="crea.jpg" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Crea</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>3 - 2</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">24/11/2024</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="charlie fc.jpg" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Charlie FC</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>1 - 1</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">17/11/2024</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="vancouverfc.jpg" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Vancouver FC</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>0 - 3</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">27/10/2024</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="casinoluckia.jpg" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Casino Bilbao Luckia</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>2 - 2</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">20/10/2024</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="basamortulegends.png" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Basamortu Legends</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>1 - 5</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">05/10/2024</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+
+                    <div class="partido">
+                        <div class="escudos">
+                            <div class="equipo">
+                                <img src="monedero.png" alt="Escudo equipo 5" class="escudo-partido">
+                                <p class="nombre-equipo">Monedero Multiseguros</p>
+                            </div>
+                            <div class="equipo">
+                                <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo equipo 6" class="escudo-partido">
+                                <p class="nombre-equipo">Golden Kaisers</p>
+                            </div>
+                        </div>
+                        <div class="resultado">
+                            <p>2 - 2</p>
+                        </div>
+                        <!-- Fecha del partido -->
+                        <p class="fecha">29/09/2024</p> <!-- Añadido el campo para la fecha -->
+                    </div>
+                </div>
+                <button id="loadMoreApertura" class="load-more-button">Cargar más partidos</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function inicializarPartidos(temporadaId, botonId) {
+                const partidos = document.querySelectorAll(`#${temporadaId} .partido`);
+                const botonCargarMas = document.getElementById(botonId);
+                let partidosVisibles = 4;
+
+                // Ocultar todos los partidos excepto los primeros 4
+                partidos.forEach((partido, index) => {
+                    if (index >= partidosVisibles) {
+                        partido.style.display = "none";
+                    }
+                });
+
+                botonCargarMas.addEventListener("click", function () {
+                    if (partidosVisibles < partidos.length) {
+                        partidos[partidosVisibles].style.display = "block";
+                        partidosVisibles++;
+                    }
+
+                    // Ocultar el botón si ya no hay más partidos por mostrar
+                    if (partidosVisibles >= partidos.length) {
+                        botonCargarMas.style.display = "none";
+                    }
+                });
+            }
+
+            inicializarPartidos("clausura", "loadMoreClausura");
+            inicializarPartidos("apertura", "loadMoreApertura");
+
+            // Esta función muestra los partidos según la temporada seleccionada
+            function mostrarPartidos() {
+                const temporadaSeleccionada = document.getElementById('temporada-select').value;
+                const clausura = document.getElementById('clausura');
+                const apertura = document.getElementById('apertura');
+                const informativo = document.getElementById('informativo');
+
+                // Si no se ha seleccionado ninguna temporada
+                if (temporadaSeleccionada === '--') {
+                    clausura.style.display = 'none';
+                    apertura.style.display = 'none';
+                    informativo.style.display = 'block';  // Mostrar el cuadro informativo
+                } else if (temporadaSeleccionada === 'clausura') {
+                    clausura.style.display = 'block';
+                    apertura.style.display = 'none';
+                    informativo.style.display = 'none';  // Ocultar el cuadro informativo
+                } else if (temporadaSeleccionada === 'apertura') {
+                    clausura.style.display = 'none';
+                    apertura.style.display = 'block';
+                    informativo.style.display = 'none';  // Ocultar el cuadro informativo
+                }
+            }
+
+            // Llamada inicial de la función para ocultar partidos al principio
+            mostrarPartidos();
+            document.getElementById('temporada-select').addEventListener('change', mostrarPartidos);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - Golden Kaisers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- Escudo dentro de la franja azul en la esquina izquierda -->
+        <div class="logo-container">
+            <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo Golden Kaisers" class="escudo">
+        </div>
+        <h1>Golden Kaisers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="plantilla.html">Plantilla</a></li>
+                <li><a href="clasificacion.html">Clasificación</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li id="login-section">
+                    <!-- Aquí se mostrará el estado de inicio de sesión -->
+                    <a href="login.html" id="login-link">Iniciar sesión</a>
+                    <span id="user-info" style="display:none;">
+                        Bienvenido, <span id="username"></span> <button id="logout-btn">Cerrar sesión</button>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Calendario de Partidos</h2>
+            <p>Consulta el calendario de partidos de la temporada.</p>
+            <div id="calendario-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="patrocinadores">
+                <h3>Patrocinadores</h3>
+                <div class="patrocinadores-logos">
+                    <img src="/La florida_Mesa de trabajo 1.png" alt="Patrocinador 1" class="patrocinador-logo">
+                    <img src="/Gure Etxea_Mesa de trabajo 1.png" alt="Patrocinador 2" class="patrocinador-logo">
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Golden Kaisers. Todos los derechos reservados.</p>
+                <p>Compitiendo en la Clausura 2B de la liga de Fútbol 7. Síguenos en Instagram: 
+                    <a href="https://www.instagram.com/goldenkaisersfc" target="_blank">Golden Kaisers</a> | 
+                    Visita nuestra competición: 
+                    <a href="https://www.futbolsiete.com" target="_blank">Fútbol 7</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const meses = [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+
+            const diasSemana = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
+
+            function crearCalendario(mes, año) {
+                const fecha = new Date(año, mes);
+                const primerDia = (new Date(año, mes, 1).getDay() + 6) % 7; // Ajustar para que lunes sea el primer día
+                const diasEnMes = new Date(año, mes + 1, 0).getDate();
+
+                let calendarioHTML = `<div class="calendario-mes">
+                    <h3>${meses[mes]} ${año}</h3>
+                    <table>
+                        <thead>
+                            <tr>${diasSemana.map(dia => `<th>${dia}</th>`).join('')}</tr>
+                        </thead>
+                        <tbody>
+                            <tr>`;
+
+                for (let i = 0; i < primerDia; i++) {
+                    calendarioHTML += "<td></td>";
+                }
+
+                for (let dia = 1; dia <= diasEnMes; dia++) {
+                    const diaActual = (new Date(año, mes, dia).getDay() + 6) % 7; // Ajustar para que lunes sea el primer día
+                    calendarioHTML += `<td data-dia="${dia}" data-mes="${mes}" data-año="${año}">${dia}</td>`;
+                    if (diaActual === 6 && dia !== diasEnMes) {
+                        calendarioHTML += "</tr><tr>";
+                    }
+                }
+
+                calendarioHTML += `</tr></tbody></table></div>`;
+                return calendarioHTML;
+            }
+
+            function mostrarCalendarios(año) {
+                const calendarioContainer = document.getElementById("calendario-container");
+                calendarioContainer.innerHTML = "";
+                for (let mes = 2; mes <= 5; mes++) { // Mostrar de marzo (2) a junio (5)
+                    calendarioContainer.innerHTML += crearCalendario(mes, año);
+                }
+            }
+
+            mostrarCalendarios(new Date().getFullYear());
+
+            // Ejemplo de cómo añadir un partido
+            function añadirPartido(dia, mes, año, escudo, colorFondo) {
+                const celda = document.querySelector(`td[data-dia="${dia}"][data-mes="${mes}"][data-año="${año}"]`);
+                if (celda) {
+                    celda.style.backgroundColor = colorFondo;
+                    celda.innerHTML += `<img src="${escudo}" alt="Escudo del rival" class="escudo-rival">`;
+                }
+            }
+
+            // Añadir partidos de ejemplo
+            añadirPartido(30, 2, 2025, "toju.png", "#ccffcc");
+            añadirPartido(23, 2, 2025, "guipuzkoa34.png", "#d3d3d3"); // 23 de marzo fondo gris claro
+            añadirPartido(6, 3, 2025, "transprim.png", "#d3d3d3"); // 6 de abril fondo gris claro
+            añadirPartido(13, 3, 2025, "banggang.png", "#add8e6"); // 13 de abril fondo azul claro
+            añadirPartido(11, 4, 2025, "membersonly.png", "#ffffff"); // 11 de mayo fondo blanco
+            añadirPartido(25, 4, 2025, "alobajini.png", "#dda0dd"); // 25 de mayo fondo morado claro
+            añadirPartido(1, 5, 2025, "powacity.png", "#d2b48c"); // 1 de junio fondo marrón claro
+        });
+    </script>
+</body>
+</html>

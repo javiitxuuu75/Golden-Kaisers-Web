@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Kaisers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- Escudo dentro de la franja azul en la esquina izquierda -->
+        <div class="logo-container">
+            <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo Golden Kaisers" class="escudo">
+        </div>
+        <h1>Golden Kaisers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="plantilla.html">Plantilla</a></li>
+                <li><a href="clasificacion.html">Clasificación</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li id="login-section">
+                    <!-- Aquí se mostrará el estado de inicio de sesión -->
+                    <a href="login.html" id="login-link">Iniciar sesión</a>
+                    <span id="user-info" style="display:none;">
+                        Bienvenido, <span id="username"></span> <button id="logout-btn">Cerrar sesión</button>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Imagen del equipo, arriba de los partidos -->
+        <section>
+            <img src="Imagen equipo.jpg" alt="Golden Kaisers" class="team-img"> 
+        </section>
+
+            <section>
+                <h2>Últimos partidos</h2>
+                <p>Aquí aparecerán los últimos resultados.</p>
+                <div id="ultimos-partidos" class="ultimos-partidos-container">
+                    <!-- Aquí aparecerán los últimos resultados -->
+                </div>
+            </section>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    cargarUltimosPartidos();
+                });
+            
+                function cargarUltimosPartidos() {
+                    const partidos = [
+                        {
+                            fecha: '15/03/2025',
+                            equipo1: 'Golden Kaisers',
+                            equipo2: 'Mambo FC',
+                            resultado: '4-0'
+                        },
+                        {
+                            fecha: '09/03/2025',
+                            equipo1: 'Golden Kaisers',
+                            equipo2: 'Tolkomush F.C',
+                            resultado: '3-0'
+                        },
+                        {
+                            fecha: '22/02/2025',
+                            equipo1: 'Redvolution',
+                            equipo2: 'Golden Kaisers',
+                            resultado: '1-2'
+                        }
+                    ];
+            
+                    const ultimosPartidosContainer = document.getElementById('ultimos-partidos');
+                    partidos.forEach(partido => {
+                        const partidoElement = document.createElement('div');
+                        partidoElement.classList.add('partido');
+                        partidoElement.innerHTML = `
+                            <p><strong>${partido.fecha}</strong></p>
+                            <p>${partido.equipo1} vs ${partido.equipo2}</p>
+                            <p>Resultado: ${partido.resultado}</p>
+                        `;
+                        ultimosPartidosContainer.appendChild(partidoElement);
+                    });
+                }
+            </script>
+            
+            <style>
+    .ultimos-partidos-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .ultimos-partidos-container .partido {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        width: 30%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .partido-destacado {
+        font-weight: bold;
+        color: blue;
+    }
+</style>
+        </section>
+
+        <section>
+            <h2>Últimos Vídeos</h2>
+            <p>Resúmenes de los partidos disponibles en Youtube.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tsVLXcAZzD4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Sjp4G8dlVrg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-container">
+            <div class="patrocinadores">
+                <h3>Patrocinadores</h3>
+                <div class="patrocinadores-logos">
+                    <img src="La florida_Mesa de trabajo 1.png" alt="Patrocinador 1" class="patrocinador-logo">
+                    <img src="Gure Etxea_Mesa de trabajo 1.png" alt="Patrocinador 2" class="patrocinador-logo">
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Golden Kaisers. Todos los derechos reservados.</p>
+                <p>Compitiendo en la Clausura 2B de la liga de Fútbol 7. Síguenos en Instagram: 
+                    <a href="https://www.instagram.com/goldenkaisersfc" target="_blank">Golden Kaisers</a> | 
+                    Visita nuestra competición: 
+                    <a href="https://www.futbolsiete.com" target="_blank">Fútbol 7</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+    <script>
+        // Verificar si el usuario está logueado al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const loginLink = document.getElementById('login-link');
+            const userInfo = document.getElementById('user-info');
+            const username = document.getElementById('username');
+            const logoutBtn = document.getElementById('logout-btn');
+
+            if (isLoggedIn === 'true') {
+                // Mostrar información del usuario si está logueado
+                loginLink.style.display = 'none';  // Ocultar el link de "Iniciar sesión"
+                userInfo.style.display = 'inline';  // Mostrar la info del usuario
+                username.textContent = localStorage.getItem('username');  // Mostrar el nombre de usuario
+
+                // Función para cerrar sesión
+                logoutBtn.addEventListener('click', function() {
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('username');
+                    window.location.href = 'index.html';  // Redirigir a la página principal
+                });
+            } else {
+                // Si no está logueado, mostrar la opción de iniciar sesión
+                loginLink.style.display = 'inline';
+                userInfo.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

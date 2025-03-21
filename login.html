@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - Golden Kaisers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo Golden Kaisers" class="escudo">
+        </div>
+        <h1>Golden Kaisers</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Introduce tus credenciales</h2>
+            <form id="login-form">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <p id="error-message" style="color: red; display: none;">Credenciales incorrectas, por favor intentalo de nuevo.</p>
+        </section>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

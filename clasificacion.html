@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Kaisers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- Escudo dentro de la franja azul en la esquina izquierda -->
+        <div class="logo-container">
+            <img src="ESCUDO GOLDEN KAISERS.png" alt="Escudo Golden Kaisers" class="escudo">
+        </div>
+        <h1>Golden Kaisers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="partidos.html">Partidos</a></li>
+                <li><a href="plantilla.html">Plantilla</a></li>
+                <li><a href="clasificacion.html">Clasificación</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="calendario.html">Calendario</a></li>
+                <li id="login-section">
+                    <!-- Aquí se mostrará el estado de inicio de sesión -->
+                    <a href="login.html" id="login-link">Iniciar sesión</a>
+                    <span id="user-info" style="display:none;">
+                        Bienvenido, <span id="username"></span> <button id="logout-btn">Cerrar sesión</button>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .table-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clasificación</h1>
+    </header>
+
+    <div class="season-selector">
+        <label for="season">Selecciona Temporada:</label>
+        <select id="season" onchange="changeSeason()">
+            <option value="clausura" selected>Clausura 2B 2024-25(Actual)</option>
+            <option value="apertura">Apertura 2B 2024-25(Finalizada)</option>
+        </select>
+    </div>
+
+    <div class="table-container">
+        <!-- Tabla Clausura -->
+        <table id="clausura" class="league-table">
+            <tr>
+                <th>#</th>
+                <th>Nombre Equipo</th>
+                <th>Puntos</th>
+                <th>P.G.</th>
+                <th>P.E.</th>
+                <th>P.P.</th>
+                <th>G.F.</th>
+                <th>G.C.</th>
+                <th>P.J.</th>
+            </tr>
+            <tr><td>1</td><td>Transprim Logística 2016 S.L.</td><td>9</td><td>3</td><td>0</td><td>0</td><td>10</td><td>2</td><td>3</td></tr>
+            <tr><td>2</td><td>Powa City</td><td>7</td><td>2</td><td>1</td><td>1</td><td>9</td><td>6</td><td>4</td></tr>
+            <tr><td>3</td><td>Gipuzkoa 34</td><td>6</td><td>2</td><td>0</td><td>0</td><td>9</td><td>2</td><td>2</td></tr>
+            <tr><td>4</td><td>Bang Gang</td><td>6</td><td>2</td><td>0</td><td>2</td><td>11</td><td>5</td><td>4</td></tr>
+            <tr><td>5</td><td>Golden Kaisers</td><td>6</td><td>2</td><td>0</td><td>0</td><td>6</td><td>1</td><td>2</td></tr>
+            <tr><td>6</td><td>A Lo Bajini</td><td>5</td><td>1</td><td>2</td><td>0</td><td>6</td><td>5</td><td>3</td></tr>
+            <tr><td>7</td><td>Members Only</td><td>2</td><td>0</td><td>2</td><td>1</td><td>3</td><td>7</td><td>3</td></tr>
+            <tr><td>8</td><td>Tojú - Narotek 21</td><td>1</td><td>0</td><td>1</td><td>2</td><td>5</td><td>8</td><td>3</td></tr>
+            <tr><td>9</td><td>DESCANSO</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>10</td><td>Mambo FC</td><td>0</td><td>0</td><td>0</td><td>2</td><td>1</td><td>7</td><td>2</td></tr>
+            <tr><td>11</td><td>Redvolution</td><td>0</td><td>0</td><td>0</td><td>4</td><td>2</td><td>19</td><td>4</td></tr>
+        </table>
+
+        <!-- Tabla Apertura -->
+        <table id="apertura" class="league-table" style="display:none;">
+            <tr>
+                <th>#</th>
+                <th>Nombre Equipo</th>
+                <th>Puntos</th>
+                <th>P.G.</th>
+                <th>P.E.</th>
+                <th>P.P.</th>
+                <th>G.F.</th>
+                <th>G.C.</th>
+                <th>P.J.</th>
+            </tr>
+            <tr><td>1</td><td>Vancouver FC</td><td>27</td><td>9</td><td>0</td><td>1</td><td>34</td><td>16</td><td>10</td></tr>
+            <tr><td>2</td><td>Basamortu Legends</td><td>27</td><td>9</td><td>0</td><td>1</td><td>46</td><td>7</td><td>10</td></tr>
+            <tr><td>3</td><td>Eternos Repelega 94</td><td>22</td><td>7</td><td>1</td><td>2</td><td>34</td><td>27</td><td>10</td></tr>
+            <tr><td>4</td><td>Amaetilico</td><td>15</td><td>5</td><td>0</td><td>5</td><td>38</td><td>26</td><td>10</td></tr>
+            <tr><td>5</td><td>Mambo FC</td><td>13</td><td>4</td><td>1</td><td>5</td><td>18</td><td>29</td><td>10</td></tr>
+            <tr><td>6</td><td>Monedero Multiseguros</td><td>12</td><td>3</td><td>3</td><td>4</td><td>19</td><td>25</td><td>10</td></tr>
+            <tr><td>7</td><td>Golden Kaisers</td><td>12</td><td>3</td><td>3</td><td>4</td><td>16</td><td>22</td><td>10</td></tr>
+            <tr><td>8</td><td>Crea</td><td>11</td><td>3</td><td>2</td><td>5</td><td>24</td><td>28</td><td>10</td></tr>
+            <tr><td>9</td><td>Los Procrastinadores</td><td>10</td><td>3</td><td>2</td><td>5</td><td>22</td><td>27</td><td>10</td></tr>
+            <tr><td>10</td><td>Casino Bilbao Luckia</td><td>7</td><td>2</td><td>1</td><td>7</td><td>21</td><td>36</td><td>10</td></tr>
+            <tr><td>11</td><td>Charlie FC</td><td>-1</td><td>0</td><td>1</td><td>9</td><td>11</td><td>40</td><td>10</td></tr>
+        </table>
+    </div>
+
+    <script>
+        function changeSeason() {
+            var selectedSeason = document.getElementById("season").value;
+            if (selectedSeason === "clausura") {
+                document.getElementById("clausura").style.display = "table";
+                document.getElementById("apertura").style.display = "none";
+            } else {
+                document.getElementById("clausura").style.display = "none";
+                document.getElementById("apertura").style.display = "table";
+            }
+        }
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="patrocinadores">
+                <h3>Patrocinadores</h3>
+                <div class="patrocinadores-logos">
+                    <img src="La florida_Mesa de trabajo 1.png" alt="Patrocinador 1" class="patrocinador-logo">
+                    <img src="Gure Etxea_Mesa de trabajo 1.png" alt="Patrocinador 2" class="patrocinador-logo">
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 Golden Kaisers. Todos los derechos reservados.</p>
+                <p>Compitiendo en la Clausura 2B de la liga de Fútbol 7. Síguenos en Instagram: 
+                    <a href="https://www.instagram.com/goldenkaisersfc" target="_blank">Golden Kaisers</a> | 
+                    Visita nuestra competición: 
+                    <a href="https://www.futbolsiete.com" target="_blank">Fútbol 7</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

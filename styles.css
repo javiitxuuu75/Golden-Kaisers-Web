@@ -1,0 +1,855 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Esto asegura que el body ocupe toda la altura de la pantalla */
+}
+
+/* Estilos del header */
+header {
+    background-color: #0f559b;
+    color: white;
+    padding: 35px;
+    text-align: center;
+    position: relative;
+}
+
+/* Contenedor del escudo */
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.escudo {
+    width: 120px;
+    height: auto;
+}
+
+/* Estilos del título */
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Estilos del menú */
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* Estilos de la sección de partidos */
+main {
+    padding: 20px;
+    flex-grow: 1; /* Hace que el main ocupe el espacio disponible */
+    flex-shrink: 0; /* Evita que se encoja en pantallas pequeñas */
+}
+
+/* Selector de temporada */
+section {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de partidos */
+.partidos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Estilo para cada cuadrado de partido */
+.partido {
+    background-color: #fff;
+    border: 2px solid #0f559b;
+    width: 250px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo de los escudos */
+.escudos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.escudo-partido {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Estilo de la fecha */
+.fecha {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilo de los resultados */
+.resultado {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #0f559b;
+}
+
+/* Ocultar temporada no seleccionada */
+.temporada {
+    display: none;
+}
+
+/* Estilo para los nombres de los equipos */
+.nombres {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.nombre-equipo {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+}
+
+/* Estilo para el botón de cargar más partidos */
+#loadMore, #loadMoreClausura {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#loadMore:hover, #loadMoreClausura:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el cuadro informativo */
+#informativo {
+    background-color: transparent;
+    color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#informativo .informativo-contenido {
+    font-size: 18px;
+}
+
+#informativo strong {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la sección de contacto */
+.contacto {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto h2 {
+    color: #0f559b;
+}
+
+.contacto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.contacto-item p {
+    margin: 5px 0;
+}
+
+contacto-item a {
+    color: #0f559b;
+    text-decoration: none;
+}
+
+contacto-item a:hover {
+    text-decoration: underline;
+}
+
+.team-img {
+    display: block;
+    margin: 40px auto; /* Centra la imagen y añade un pequeño margen */
+    width: 60%; /* Ajusta el tamaño al 60% del contenedor */
+    max-width: 1000px; /* Limita el tamaño máximo para que no sea demasiado grande */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    border-radius: 10px; /* Bordes redondeados para un mejor diseño (opcional) */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera para resaltar la imagen */
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #0f559b;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px; /* Asegura que haya un margen entre las cartas y el pie de página */
+    flex-shrink: 0; /* Asegura que el pie de página no se encoja */
+}
+
+/* Asegurar que el footer se quede al fondo */
+footer .patrocinadores {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+footer .patrocinadores img {
+    max-height: 90px;
+    object-fit: contain;
+}
+
+footer .footer-text {
+    font-size: 0.9em;
+}
+
+/* Enlace de patrocinadores */
+footer .footer-text a {
+    color: rgb(184, 30, 30);
+    text-decoration: none;
+}
+
+footer .footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la plantilla */
+/* Contenedor de las cartas de jugadores */
+.squad-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+    gap: 20px; /* Espacio consistente entre todas las cartas */
+    padding: 20px;
+    justify-items: center; /* Centra las cartas dentro de cada celda */
+    align-items: start; /* Asegura que las cartas no se desalineen verticalmente */
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Ajuste de las cartas de los jugadores */
+.player-card {
+    width: 80%; /* Asegura que las cartas ocupen el 100% del espacio disponible dentro de la celda */
+    height: auto;
+    background: linear-gradient(135deg, #1730bd, #c7c8df);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 2px 4px 8px rgba(20, 23, 194, 0.3);
+    transition: transform 0.3s;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    bottom: 0%;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido se distribuya uniformemente */
+    padding: 10px;
+}
+
+
+.player-card:hover {
+    transform: scale(1.05);
+}
+
+.player-image {
+        width: 55%; /* Ajusta el tamaño de la imagen */
+        height: auto;
+        position: absolute;
+        bottom: 0; /* Coloca la imagen en la parte inferior */
+        left: 50%; /* Centra horizontalmente */
+        transform: translateX(-50%); /* Asegura que esté centrada */
+        border-radius: 8px;
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+/* Carta de entrenador */
+/* Carta de entrenador */
+.coach-card {
+    width: 100%;
+    max-width: 200px;
+    height: 260px;
+    background: linear-gradient(135deg, #000, #c7c8df); /* Fondo negro con un gradiente */
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Carta de entrenador al pasar el ratón */
+.coach-card:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen de la carta de entrenador */
+.coach-card .player-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+main {
+    padding: 20px;
+    flex-grow: 1; /* Esto hace que el main ocupe el espacio disponible */
+    flex-shrink: 0; /* Evita que se encoja en pantallas pequeñas */
+    margin-left: 20px; /* Añade margen a la izquierda */
+    margin-right: 20px; /* Añade margen a la derecha */
+}
+
+section {
+    margin: 20px 0; /* Espaciado arriba y abajo de la sección */
+}
+/* Estilo para las cartas de los porteros */
+.portero {
+    background: linear-gradient(135deg, #9b30b0, #c7c8df); /* Fondo morado para las cartas de los porteros */
+}
+.player-card {
+    position: relative;
+    width: 200px; /* Ajusta según necesites */
+    height: 260px;
+}
+
+.player-image {
+    width: 55%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    position: absolute;
+    bottom: 0; /* Coloca la imagen en la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Asegura que esté centrada */
+    border-radius: 8px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.celebration {
+    opacity: 0;
+}
+
+.player-card:hover .normal {
+    opacity: 0;
+}
+
+.player-card:hover .celebration {
+    opacity: 1;
+}
+/* Estilo para el número en la parte superior izquierda */
+.player-number {
+    position: absolute;
+    bottom: 10px;  /* Ajusta la distancia desde el borde superior */
+    right: 10px;  /* Ajusta la distancia desde el borde izquierdo */
+    font-size: 2em; /* Tamaño grande */
+    font-weight: bold; /* En negrita */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombra para destacar el número */
+    z-index: 1;  /* Asegura que el número esté por encima de otros elementos */
+}
+.player-card {
+    /* Establece el contenedor de los elementos */
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se alineen en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+  }
+  
+  .player-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .player-position {
+    font-size: 22px;
+    margin-top: 40px; /* Da un pequeño espacio entre el nombre y la posición */
+  }
+  .player-image-puga {
+    width: 75%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    position: absolute;
+    bottom: 0; /* Coloca la imagen en la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Asegura que esté centrada */
+    border-radius: 8px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    }
+    .player-card:hover .player-image-puga {
+        opacity: 0; /* Hace que la imagen sea invisible */
+        transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+    }
+    
+    /* Hacer que la imagen de celebración esté oculta por defecto */
+.player-image-celebration {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transición suave */
+    width: 88%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    position: absolute;
+    bottom: 0; /* Coloca la imagen en la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Asegura que esté centrada */
+    border-radius: 8px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    }
+
+/* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+.player-card:hover .player-image-celebration {
+    opacity: 1;
+}
+
+.player-image-ander {
+    width: 110%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    position: absolute;
+    bottom: 0; /* Coloca la imagen en la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Asegura que esté centrada */
+    border-radius: 8px;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    }
+    .player-card:hover .player-image-ander {
+        opacity: 0; /* Hace que la imagen sea invisible */
+        transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+    }
+
+    .player-image-celebration-ander {
+        opacity: 0;
+        transition: opacity 0.3s ease; /* Transición suave */
+        width: 110%; /* Ajusta el tamaño de la imagen */
+        height: auto;
+        position: absolute;
+        bottom: 0; /* Coloca la imagen en la parte inferior */
+        left: 50%; /* Centra horizontalmente */
+        transform: translateX(-50%); /* Asegura que esté centrada */
+        border-radius: 8px;
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+        }
+    
+    /* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+    .player-card:hover .player-image-celebration-ander {
+        opacity: 1;
+    }
+
+    .player-image-gaizka {
+        width: 100%; /* Ajusta el tamaño de la imagen */
+        height: auto;
+        position: absolute;
+        bottom: 0; /* Coloca la imagen en la parte inferior */
+        left: 50%; /* Centra horizontalmente */
+        transform: translateX(-50%); /* Asegura que esté centrada */
+        border-radius: 8px;
+        object-fit: cover; /* Mantiene la proporción de la imagen */
+        }
+        .player-card:hover .player-image-gaizka {
+            opacity: 0; /* Hace que la imagen sea invisible */
+            transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+        }
+    
+        .player-card:hover .player-image {
+            opacity: 0; /* Hace que la imagen sea invisible */
+            transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+        }
+    
+    
+        .player-image-aketx {
+            width: 56%; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            position: absolute;
+            bottom: 0; /* Coloca la imagen en la parte inferior */
+            left: 50%; /* Centra horizontalmente */
+            transform: translateX(-50%); /* Asegura que esté centrada */
+            border-radius: 8px;
+            object-fit: cover; /* Mantiene la proporción de la imagen */
+            }
+            .player-card:hover .player-image-aketx {
+                opacity: 0; /* Hace que la imagen sea invisible */
+                transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+            }
+        
+            .player-image-celebration-lander {
+                opacity: 0;
+                transition: opacity 0.3s ease; /* Transición suave */
+                width: 80%; /* Ajusta el tamaño de la imagen */
+                height: auto;
+                position: absolute;
+                bottom: 0; /* Coloca la imagen en la parte inferior */
+                left: 50%; /* Centra horizontalmente */
+                transform: translateX(-50%); /* Asegura que esté centrada */
+                border-radius: 8px;
+                object-fit: cover; /* Mantiene la proporción de la imagen */
+                }
+            
+            /* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+            .player-card:hover .player-image-celebration-lander {
+                opacity: 1; 
+            }
+            .player-image-baza {
+                width: 58%; /* Ajusta el tamaño de la imagen */
+                height: auto;
+                position: absolute;
+                bottom: 0; /* Coloca la imagen en la parte inferior */
+                left: 50%; /* Centra horizontalmente */
+                transform: translateX(-50%); /* Asegura que esté centrada */
+                border-radius: 8px;
+                object-fit: cover; /* Mantiene la proporción de la imagen */
+                }
+                .player-card:hover .player-image-baza {
+                    opacity: 0; /* Hace que la imagen sea invisible */
+                    transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                }
+
+                .player-image-markel {
+                    width: 60%; /* Ajusta el tamaño de la imagen */
+                    height: auto;
+                    position: absolute;
+                    bottom: 0; /* Coloca la imagen en la parte inferior */
+                    left: 50%; /* Centra horizontalmente */
+                    transform: translateX(-50%); /* Asegura que esté centrada */
+                    border-radius: 8px;
+                    object-fit: cover; /* Mantiene la proporción de la imagen */
+                    }
+                    .player-card:hover .player-image-markel {
+                        opacity: 0; /* Hace que la imagen sea invisible */
+                        transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                    }
+
+                    .player-image-celebration-markel {
+                        opacity: 0;
+                        transition: opacity 0.3s ease; /* Transición suave */
+                        width: 67%; /* Ajusta el tamaño de la imagen */
+                        height: auto;
+                        position: absolute;
+                        bottom: 0; /* Coloca la imagen en la parte inferior */
+                        left: 50%; /* Centra horizontalmente */
+                        transform: translateX(-50%); /* Asegura que esté centrada */
+                        border-radius: 8px;
+                        object-fit: cover; /* Mantiene la proporción de la imagen */
+                        }
+                    
+                    /* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+                    .player-card:hover .player-image-celebration-markel {
+                        opacity: 1; 
+                    }
+                    .player-image-parla {
+                        width: 53%; /* Ajusta el tamaño de la imagen */
+                        height: auto;
+                        position: absolute;
+                        bottom: 0; /* Coloca la imagen en la parte inferior */
+                        left: 50%; /* Centra horizontalmente */
+                        transform: translateX(-50%); /* Asegura que esté centrada */
+                        border-radius: 8px;
+                        object-fit: cover; /* Mantiene la proporción de la imagen */
+                        }
+                        .player-card:hover .player-image-parla {
+                            opacity: 0; /* Hace que la imagen sea invisible */
+                            transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                        }
+                        .player-image-inigo {
+                            width: 50%; /* Ajusta el tamaño de la imagen */
+                            height: auto;
+                            position: absolute;
+                            bottom: 0; /* Coloca la imagen en la parte inferior */
+                            left: 50%; /* Centra horizontalmente */
+                            transform: translateX(-50%); /* Asegura que esté centrada */
+                            border-radius: 8px;
+                            object-fit: cover; /* Mantiene la proporción de la imagen */
+                            }
+                            .player-card:hover .player-image-inigo {
+                                opacity: 0; /* Hace que la imagen sea invisible */
+                                transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                            }
+        
+                            .player-image-celebration-inigo {
+                                opacity: 0;
+                                transition: opacity 0.3s ease; /* Transición suave */
+                                width: 100%; /* Ajusta el tamaño de la imagen */
+                                height: auto;
+                                position: absolute;
+                                bottom: 0; /* Coloca la imagen en la parte inferior */
+                                left: 50%; /* Centra horizontalmente */
+                                transform: translateX(-50%); /* Asegura que esté centrada */
+                                border-radius: 8px;
+                                object-fit: cover; /* Mantiene la proporción de la imagen */
+                                }
+                            
+                            /* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+                            .player-card:hover .player-image-celebration-inigo {
+                                opacity: 1; 
+                            }
+                            .player-image-lucas {
+                                width: 50%; /* Ajusta el tamaño de la imagen */
+                                height: auto;
+                                position: absolute;
+                                bottom: 0; /* Coloca la imagen en la parte inferior */
+                                left: 50%; /* Centra horizontalmente */
+                                transform: translateX(-50%); /* Asegura que esté centrada */
+                                border-radius: 8px;
+                                object-fit: cover; /* Mantiene la proporción de la imagen */
+                                }
+                                .player-card:hover .player-image-lucas {
+                                    opacity: 0; /* Hace que la imagen sea invisible */
+                                    transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                                }
+            
+                                .player-image-celebration-lucas {
+                                    opacity: 0;
+                                    transition: opacity 0.3s ease; /* Transición suave */
+                                    width: 100%; /* Ajusta el tamaño de la imagen */
+                                    height: auto;
+                                    position: absolute;
+                                    bottom: 0; /* Coloca la imagen en la parte inferior */
+                                    left: 50%; /* Centra horizontalmente */
+                                    transform: translateX(-50%); /* Asegura que esté centrada */
+                                    border-radius: 8px;
+                                    object-fit: cover; /* Mantiene la proporción de la imagen */
+                                    }
+                                
+                                /* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+                                .player-card:hover .player-image-celebration-lucas {
+                                    opacity: 1; 
+                                }
+
+                                .player-image-marcos {
+                                    width: 60%; /* Ajusta el tamaño de la imagen */
+                                    height: auto;
+                                    position: absolute;
+                                    bottom: 0; /* Coloca la imagen en la parte inferior */
+                                    left: 50%; /* Centra horizontalmente */
+                                    transform: translateX(-50%); /* Asegura que esté centrada */
+                                    border-radius: 8px;
+                                    object-fit: cover; /* Mantiene la proporción de la imagen */
+                                    }
+                                    .player-card:hover .player-image-marcos {
+                                        opacity: 0; /* Hace que la imagen sea invisible */
+                                        transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                                    }
+                
+                                    .player-image-celebration-marcos {
+                                        opacity: 0;
+                                        transition: opacity 0.3s ease; /* Transición suave */
+                                        width: 100%; /* Ajusta el tamaño de la imagen */
+                                        height: auto;
+                                        position: absolute;
+                                        bottom: 0; /* Coloca la imagen en la parte inferior */
+                                        left: 50%; /* Centra horizontalmente */
+                                        transform: translateX(-50%); /* Asegura que esté centrada */
+                                        border-radius: 8px;
+                                        object-fit: cover; /* Mantiene la proporción de la imagen */
+                                        }
+                                    
+                                    /* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+                                    .player-card:hover .player-image-celebration-marcos {
+                                        opacity: 1; 
+                                    }
+
+                                    .player-image-javi {
+                                        width: 50%; /* Ajusta el tamaño de la imagen */
+                                        height: auto;
+                                        position: absolute;
+                                        bottom: 0; /* Coloca la imagen en la parte inferior */
+                                        left: 50%; /* Centra horizontalmente */
+                                        transform: translateX(-50%); /* Asegura que esté centrada */
+                                        border-radius: 8px;
+                                        object-fit: cover; /* Mantiene la proporción de la imagen */
+                                        }
+                                        .player-card:hover .player-image-javi {
+                                            opacity: 0; /* Hace que la imagen sea invisible */
+                                            transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                                        }
+                    
+                                        .player-image-celebration-javi {
+                                            opacity: 0;
+                                            transition: opacity 0.3s ease; /* Transición suave */
+                                            width: 100%; /* Ajusta el tamaño de la imagen */
+                                            height: auto;
+                                            position: absolute;
+                                            bottom: 0; /* Coloca la imagen en la parte inferior */
+                                            left: 50%; /* Centra horizontalmente */
+                                            transform: translateX(-50%); /* Asegura que esté centrada */
+                                            border-radius: 8px;
+                                            object-fit: cover; /* Mantiene la proporción de la imagen */
+                                            }
+                                        
+                                        /* Cuando el ratón pasa sobre la tarjeta, hacer visible la imagen de celebración */
+                                        .player-card:hover .player-image-celebration-javi {
+                                            opacity: 1; 
+                                        }
+                                        .player-image-alexandru {
+                                            width: 61%; /* Ajusta el tamaño de la imagen */
+                                            height: auto;
+                                            position: absolute;
+                                            bottom: 0; /* Coloca la imagen en la parte inferior */
+                                            left: 50%; /* Centra horizontalmente */
+                                            transform: translateX(-50%); /* Asegura que esté centrada */
+                                            border-radius: 8px;
+                                            object-fit: cover; /* Mantiene la proporción de la imagen */
+                                            }
+                                            .player-card:hover .player-image-alexandru {
+                                                opacity: 0; /* Hace que la imagen sea invisible */
+                                                transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+
+                                            }
+
+                                            .player-image-lander {
+                                                width: 58%; /* Ajusta el tamaño de la imagen */
+                                                height: auto;
+                                                position: absolute;
+                                                bottom: 0; /* Coloca la imagen en la parte inferior */
+                                                left: 50%; /* Centra horizontalmente */
+                                                transform: translateX(-50%); /* Asegura que esté centrada */
+                                                border-radius: 8px;
+                                                object-fit: cover; /* Mantiene la proporción de la imagen */
+                                                }
+                                                .player-card:hover .player-image-lander {
+                                                    opacity: 0; /* Hace que la imagen sea invisible */
+                                                    transition: opacity 0.1s ease; /* Transición suave de la opacidad */
+                                                }
+                                                .player-image-mister {
+                                                    width: 53%; /* Ajusta el tamaño de la imagen */
+                                                    height: auto;
+                                                    position: absolute;
+                                                    bottom: 0; /* Coloca la imagen en la parte inferior */
+                                                    left: 50%; /* Centra horizontalmente */
+                                                    transform: translateX(-50%); /* Asegura que esté centrada */
+                                                    border-radius: 8px;
+                                                    object-fit: cover; /* Mantiene la proporción de la imagen */
+                                                    }
+                                                    .load-more-button {
+                                                        background-color: #007BFF;
+                                                        color: white;
+                                                        border: none;
+                                                        padding: 10px 20px;
+                                                        font-size: 1.2em;
+                                                        cursor: pointer;
+                                                        border-radius: 5px;
+                                                        margin-top: 20px;
+                                                    }
+                                                    .video-container {
+                                                        display: flex;
+                                                        justify-content: space-around;
+                                                        flex-wrap: wrap;
+                                                    }
+                                                    
+                                                    .video-container iframe {
+                                                        max-width: 100%;
+                                                        margin: 10px;
+                                                    }
+
+                                                    .informativo {
+                                                        display: flex;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                        height: 60vh; /* Ajusta la altura según sea necesario */
+                                                        text-align: center;
+                                                    }
+                                                    
+                                                    .informativo-contenido {
+                                                        background-color: #0f559b;
+                                                        padding: 20px;
+                                                        border-radius: 8px;
+                                                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                    }
+                                                    
+                                                    .informativo h2 {
+                                                        font-size: 24px;
+                                                        margin-bottom: 10px;
+                                                    }
+                                                    
+                                                    .informativo p {
+                                                        font-size: 16px;
+                                                        color: #ffffff;
+                                                    }
+
+.calendario-mes {
+    margin-bottom: 20px;
+    width: 50%; /* Reducir el tamaño del calendario */
+    margin: 0 auto; /* Centrar el calendario */
+}
+
+.calendario-mes h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1em; /* Reducir el tamaño del texto */
+}
+
+.calendario-mes table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendario-mes th, .calendario-mes td {
+    border: 1px solid #ddd;
+    padding: 2px; /* Reducir el padding */
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.8em; /* Reducir el tamaño del texto */
+}
+
+.calendario-mes td {
+    height: 50px; /* Reducir la altura */
+    position: relative;
+}
+
+.escudo-rival {
+    width: 20px; /* Reducir el tamaño del escudo */
+    height: auto;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
